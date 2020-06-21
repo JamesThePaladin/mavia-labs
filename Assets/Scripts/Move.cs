@@ -6,25 +6,26 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    public GameObject thisAlpha; //variable to store GameObject
+    public GameObject thisPlayer; //variable to store GameObject
+
     public Transform tf; // A variable to hold our Transform component
-    Animator playerAnimator;
+
     public float speed; // variable for vector magnitude
+
     public float xDelta; // variable for x-axis
+
     public float yDelta; // variable for y-axis
+
     private Boolean MoveEnabled = true; //boolean for disabling/enabling movement
+
 
     void Start()
     {
         // Get the Transform Component
         tf = GetComponent<Transform>();
-        //get the animator component
-        playerAnimator = GetComponent<Animator>();
     }
     void Update()
     {
-        //set code for the animator bro 6/19/20
-
         //toggle input handlers
         if (Input.GetKeyDown("p"))
         {
@@ -120,7 +121,7 @@ public class Move : MonoBehaviour
         //make thisShip inactive
         if (Input.GetKeyDown("q")) 
         {
-            thisAlpha.SetActive(false);
+            thisPlayer.SetActive(false);
         }
     }
 }
