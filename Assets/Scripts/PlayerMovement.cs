@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement; //store movement data
 
     public Rigidbody2D rb; //reference to rigidbody
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +22,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal"); //store x axis
-        movement.y = Input.GetAxisRaw("Vertical"); //store y=axis
+        movement.x = Input.GetAxis("Horizontal"); //store x axis
+        movement.y = Input.GetAxis("Vertical"); //store y=axis
 
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+        animator.SetFloat("Horizontal", movement.x); //pass x to animator horizontal
+        animator.SetFloat("Vertical", movement.y); //pass y to animator vertical
+        animator.SetFloat("Speed", movement.sqrMagnitude); //pass magnitude to animator
     }
     private void FixedUpdate()
     {
